@@ -1,0 +1,23 @@
+{
+  "name": "local-aws-env",
+  "version": "1.0.0",
+  "description": "local aws testing dump repo",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sam-local": "^0.2.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hotline-emu/local-aws-env.git"
+  },
+  "author": "Hotline Emu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hotline-emu/local-aws-env/issues"
+  },
+  "homepage": "https://github.com/hotline-emu/local-aws-env#readme"
+}
