@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "local aws testing dump repo",
   "main": "index.js",
-  "dependencies": {
-    "aws-sam-local": "^0.2.11"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

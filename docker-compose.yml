@@ -14,3 +14,11 @@ services:
     image: amazon/dynamodb-local
     ports:
       - "8000:8000"
+  local-s3:
+    image: scality/s3server:mem-latest
+    container_name: local-s3
+    environment:
+      - SCALITY_SECRET_ACCESS_KEY=secret
+      - SCALITY_ACCESS_KEY_ID=secret
+    ports:
+      - "8001:8000"

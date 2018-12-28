@@ -20,6 +20,9 @@ status: ## Shows the status of the images.
 bash: ## Enter into the server image with a bash console.
 	docker-compose exec server bash
 
+configure-aws:
+	aws configure
+
 sqs-admin: ## Open the SQS admin in a browser.
 	xdg-open http://localhost:9325/
 
@@ -47,3 +50,11 @@ list-tables: ## List the dynamo db tables
 	aws dynamodb list-tables \
 		--endpoint-url http://0.0.0.0:8000 \
 		--output json
+
+create-bucket: ## Creates a bucket locally.
+	aws s3api create-bucket \
+		--endpoint-url http://0.0.0.0:8001 \
+		--bucket testing
+
+list-buckets: ## Lists the local buckets
+	aws s3 ls --endpoint-url http://0.0.0.0:8001
