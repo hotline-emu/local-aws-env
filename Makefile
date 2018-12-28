@@ -17,9 +17,6 @@ down: ## Shuts down all images.
 status: ## Shows the status of the images.
 	docker-compose ps
 
-bash: ## Enter into the server image with a bash console.
-	docker-compose exec server bash
-
 configure-aws:
 	aws configure
 
@@ -51,10 +48,14 @@ list-tables: ## List the dynamo db tables
 		--endpoint-url http://0.0.0.0:8000 \
 		--output json
 
+bash-s3: ## Enter into the s3 server image with a bash console.
+	docker-compose exec local-s3 bash
+
 create-bucket: ## Creates a bucket locally.
 	aws s3api create-bucket \
 		--endpoint-url http://0.0.0.0:8001 \
-		--bucket testing
+		--bucket testing \
+		--acl public-read-write
 
 list-buckets: ## Lists the local buckets
 	aws s3 ls --endpoint-url http://0.0.0.0:8001
