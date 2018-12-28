@@ -35,7 +35,7 @@ read-test-queue-messages: ## Reads a test queue message.
 		--queue-url http://localhost:9324/queue/default \
 		--wait-time-seconds 10
 
-create-table: ## Creates a table on the SQS container.
+create-table: ## Creates a table on the DynamoDB container.
 	aws dynamodb create-table \
 		--table-name pagespeedData \
 		--attribute-definitions AttributeName=id,AttributeType=S \
