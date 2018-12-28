@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-help:
+help: ## Show the help options
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) |\
 		sort |\
 	 	awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -17,7 +17,7 @@ down: ## Shuts down all images.
 status: ## Shows the status of the images.
 	docker-compose ps
 
-configure-aws:
+configure-aws: ## Adjust your local AWS configuration
 	aws configure
 
 sqs-admin: ## Open the SQS admin in a browser.
@@ -35,7 +35,7 @@ read-test-queue-messages: ## Reads a test queue message.
 		--queue-url http://localhost:9324/queue/default \
 		--wait-time-seconds 10
 
-create-table:
+create-table: ## Creates a table on the SQS container.
 	aws dynamodb create-table \
 		--table-name pagespeedData \
 		--attribute-definitions AttributeName=id,AttributeType=S \
